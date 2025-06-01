@@ -66,8 +66,8 @@ Black: #000000 (Black)
   --text-h1:        6.2rem;
 
   /* FONT WEIGHT */
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
+  --font-weight-normal: 500;
+  --font-weight-bold: 800;
 
 
   /* LINE HEIGHTS */
@@ -75,7 +75,7 @@ Black: #000000 (Black)
   --line-height-normal: 1.5;
 
   /* LETTER SPACING */
-  --letter-spacing-tight: -2px;
+  --letter-spacing-tight: -1px;
 
   /* FONT FAMILY */
   --font-family: 'Roboto', sans-serif;
@@ -163,6 +163,9 @@ a {
   text-decoration: none;
   font-size: var(--text-base);
   display: inline-block;
+}
+a:link, a:visited, a:hover, a:active {
+  color: var(--gray-base);
 }
 
 ul {
@@ -258,17 +261,26 @@ span {
 /* -----HERO SECTION----- */
 .hero-section {
   height: calc(100vh - var(--nav-height));
-  text-align: center;
+  /* text-align: center; */
   min-height: 400px;
   margin-bottom: 10rem;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hero-heading {
   margin-bottom: 1rem;
+  text-align: center;
 }
 .hero-paragraph {
   margin-bottom: 5rem;
 }
+.hero-btn-container {
+  display: flex;
+  gap: 2rem;
+}
+
 /* -----FEATURES SECTION----- */
 
 
@@ -285,27 +297,44 @@ span {
   margin-bottom: 2rem;
 }
 
+.feature-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  row-gap: 15rem;
+  column-gap: 5rem;
+  justify-items: center;
+  align-items: center;
+}
 .feature-img {
   max-width: 400px;
   width: 100%;
+}
+
+.feature-img-swap-order {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
 /* -----CTA SECTION----- */
 
 .cta-section {
   margin-bottom: 30rem;
+  display: flex;
+  justify-content: center;
 }
 
 .cta-card {
   text-align: center;
   background-color: var(--primary-base);
   max-width: 1000px;
+  width: 100%;
   padding: 10rem 20rem;
   border-radius: 20px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .cta-heading {
   margin-bottom: 3rem;
+  color: var(--white);
 }
 
 .logo-md {
@@ -337,4 +366,7 @@ span {
 
 .social-icons {
   width: 20px;
+}
+.heart-icon {
+  color: var(--secondary-base);
 }
